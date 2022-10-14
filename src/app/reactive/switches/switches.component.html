@@ -1,1 +1,103 @@
-<p>switches works!</p>
+
+<h2>Reactivos: <small>Switches</small></h2>
+<hr>
+
+<form [formGroup]="miFormulario">
+
+    <!-- Radio -->
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Genero</label>
+
+        <div class="col-sm-9">
+            <div class="form-check">
+                <input class="form-check-input"
+                       type="radio"
+                       value="M"
+                       formControlName="genero"
+                       id="radioMasculino">
+                <label class="form-check-label" for="radioMasculino">
+                    Masculino
+                </label>
+            </div>
+
+            <div class="form-check">
+                <input class="form-check-input"
+                       type="radio"
+                       value="F"
+                       formControlName="genero"
+                       id="radioFemenino">
+                <label class="form-check-label" for="radioFemenino">
+                    Femenino
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <!-- Switches -->
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Notificaciones</label>
+
+        <div class="col-sm-9">
+
+            <div class="form-check form-switch mt-2">
+                <input class="form-check-input"
+                       type="checkbox"
+                       formControlName="notificaciones"
+                       id="flexSwitchCheckDefault">
+                <label class="form-check-label" for="flexSwitchCheckDefault">Quiero recibir notificaciones</label>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Checkbox -->
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label"></label>
+
+        <div class="col-sm-9">
+
+            <div class="form-check">
+                <input class="form-check-input"
+                       type="checkbox"
+                       formControlName="terminos"
+                       id="flexCheckIndeterminate">
+                <label class="form-check-label" for="flexCheckIndeterminate">
+                    Terminos y condiciones de uso
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <!-- Boton Submit -->
+    <div class="row mb-3">
+        <div class="col">
+
+            <button class="btn btn-primary float-end"
+                    type="submit"
+                    (click)="guardar()">
+                Guardar
+            </button>
+            
+        </div>
+    </div>
+
+</form>
+
+<h4>Valor del formulario</h4>
+<pre>{{ miFormulario.value | json }}</pre>
+<br>
+
+<h4>Persona</h4>
+<pre>{{ persona | json }}</pre>
+<br>
+
+<h5>Valid</h5>
+<pre>{{ miFormulario.valid }}</pre>
+<br>
+<br>
+
+<!-- <h5>Terminos</h5>
+<pre>{{ miFormulario.controls['terminos']?.errors | json }}</pre>
+<br>
+
+<pre>Condiciones: {{ '' }}</pre> -->
